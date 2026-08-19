@@ -114,10 +114,15 @@ export default function Home() {
   const [selectedId, setSelectedId] = useState(ventures[0].id);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isPortfolioPaused, setIsPortfolioPaused] = useState(false);
 
   const filteredVentures = useMemo(
     () => (activeFilter === "All" ? ventures : ventures.filter((venture) => venture.category === activeFilter)),
     [activeFilter],
+  );
+  const loopedVentures = useMemo(
+    () => Array.from({ length: 4 }, () => filteredVentures).flat(),
+    [filteredVentures],
   );
   const selectedVenture = ventures.find((venture) => venture.id === selectedId) ?? ventures[0];
 
@@ -318,20 +323,24 @@ export default function Home() {
             ))}
           </div>
 
-          <motion.div layout className="venture-grid">
-            <AnimatePresence mode="popLayout">
-              {filteredVentures.map((venture, index) => (
-                <motion.article
-                  layout
-                  key={venture.id}
-                  className={`venture-card venture-card--${index % 5} venture-card--${venture.id}`}
-                  initial={{ opacity: 0, y: 22 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -12 }}
-                  transition={{ duration: 0.38, ease: [0.23, 1, 0.32, 1] }}
+          <div className={`portfolio-rail ${isPortfolioPaused ? "portfolio-rail--paused" : ""}`}>
+            <div className="portfolio-rail__orbit" aria-hidden="true"><span /><i /></div>
+            <div className="portfolio-rail__track" aria-label="Scrolling portfolio ventures">
+              {loopedVentures.map((venture, index) => (
+                <article
+                  key={`${venture.id}-${index}`}
+                  className={`venture-card venture-card--rail venture-card--${venture.id} ${index % 6 === 0 ? "venture-card--rail-anchor" : index % 3 === 0 ? "venture-card--rail-offset" : "venture-card--rail-signal"}`}
                   style={{ "--venture-accent": venture.accent } as React.CSSProperties}
+                  onMouseEnter={() => setIsPortfolioPaused(true)}
+                  onMouseLeave={() => setIsPortfolioPaused(false)}
                 >
-                  <button className="venture-card__inner" onClick={() => chooseVenture(venture.id)} aria-label={`Explore ${venture.name}`}>
+                  <button
+                    className="venture-card__inner"
+                    onClick={() => chooseVenture(venture.id)}
+                    onFocus={() => setIsPortfolioPaused(true)}
+                    onBlur={() => setIsPortfolioPaused(false)}
+                    aria-label={`Explore ${venture.name}`}
+                  >
                     <img src={venture.image} alt={`${venture.name} social brand reference`} loading="lazy" />
                     <span className="venture-card__veil" />
                     <span className="venture-card__parent-mark"><ZiuMark /></span>
@@ -344,10 +353,10 @@ export default function Home() {
                     </span>
                     <span className="venture-card__action"><ArrowUpRight size={17} /></span>
                   </button>
-                </motion.article>
+                </article>
               ))}
-            </AnimatePresence>
-          </motion.div>
+            </div>
+          </div>
         </section>
 
         <section className="venture-focus" id="venture-focus" aria-labelledby="venture-focus-title">

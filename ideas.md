@@ -91,3 +91,5 @@ The wordmark uses spaced uppercase **ZIU** paired with a smaller `CORPORATION` d
 - Portfolio imagery is treated as **archival evidence inside Ziu signal frames**. Social screenshots are tightly cropped into selected brand moments so an Instagram interface never becomes the dominant visual language.
 - **Ziu Signal Lime `#D6FF1F`** remains a rare navigational and emphasis signal. Its single full-background use is reserved for the closing ceremonial inversion and is structured with black orbital geometry.
 - Every venture may express one secondary accent, but the parent system — obsidian, porcelain, fine rules, coordinate labels, and the segmented orbit mark — visually dominates every section.
+- The moving portfolio rail preserves an **orbital hierarchy**: an anchor signal, offset companions, focused image crops, and a quiet orbit overlay make the collection feel curated rather than uniform.
+- Supplied social imagery is cropped to prioritize **brand marks, product cues, and venture color**, while platform interface details remain secondary archival context.

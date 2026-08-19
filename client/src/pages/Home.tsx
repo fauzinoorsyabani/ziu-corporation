@@ -211,17 +211,17 @@ export default function Home() {
             animate="visible"
             transition={{ staggerChildren: 0.08, delayChildren: 0.16 }}
           >
-            <motion.p variants={fadeUp} transition={{ duration: 0.55, ease: [0.23, 1, 0.32, 1] }} className="eyebrow">
+            <motion.p variants={fadeUp} transition={{ duration: 0.36, ease: [0.23, 1, 0.32, 1] }} className="eyebrow">
               <span className="signal-dot" /> 01 / ZIU CORPORATION
             </motion.p>
-            <motion.h1 variants={fadeUp} transition={{ duration: 0.66, ease: [0.23, 1, 0.32, 1] }} id="hero-title">
+            <motion.h1 variants={fadeUp} transition={{ duration: 0.42, ease: [0.23, 1, 0.32, 1] }} id="hero-title">
               Different ventures.
               <em> One clear direction.</em>
             </motion.h1>
-            <motion.p variants={fadeUp} transition={{ duration: 0.58, ease: [0.23, 1, 0.32, 1] }} className="hero__lede">
+            <motion.p variants={fadeUp} transition={{ duration: 0.38, ease: [0.23, 1, 0.32, 1] }} className="hero__lede">
               Ziu Corporation is the intentional home for independent brands moving with more clarity, system, and momentum.
             </motion.p>
-            <motion.div variants={fadeUp} transition={{ duration: 0.5, ease: [0.23, 1, 0.32, 1] }} className="hero__actions">
+            <motion.div variants={fadeUp} transition={{ duration: 0.34, ease: [0.23, 1, 0.32, 1] }} className="hero__actions">
               <button className="button button--signal" onClick={() => scrollToSection("portfolio")}>
                 Explore the portfolio <ArrowDownRight size={18} />
               </button>
@@ -235,7 +235,7 @@ export default function Home() {
             className="orbit-stage"
             initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.9, delay: 0.25, ease: [0.23, 1, 0.32, 1] }}
+            transition={{ duration: 0.56, delay: 0.18, ease: [0.23, 1, 0.32, 1] }}
             aria-label="An abstract orbit graphic representing Ziu's portfolio"
             role="img"
           >
@@ -258,6 +258,27 @@ export default function Home() {
             <span>INDONESIA / MULTI-VENTURE</span>
             <span className="hero__footer-line" />
             <span>QUIETLY AMBITIOUS</span>
+          </div>
+        </section>
+
+        <section className="signal-ticker" aria-label="Selected Ziu portfolio ventures in motion">
+          <span className="ticker-accessible">Selected portfolio ventures: Xyla Gudang, Mutther Cake and Bakery, Ziu Gaming Store, Code of Auction, Mega Phone Cell, and Joki Tugas.</span>
+          <div className="signal-ticker__caption"><span className="signal-dot" /> LIVE PORTFOLIO SIGNAL</div>
+          <div className="signal-ticker__viewport" aria-hidden="true">
+            <div className="ticker-track ticker-track--left">
+              {[...ventures, ...ventures].map((venture, index) => (
+                <span className="ticker-pill" key={`left-${venture.id}-${index}`} style={{ "--ticker-accent": venture.accent } as React.CSSProperties}>
+                  <i /> {venture.name} <small>{venture.category}</small>
+                </span>
+              ))}
+            </div>
+            <div className="ticker-track ticker-track--right">
+              {[...ventures, ...ventures].map((venture, index) => (
+                <span className="ticker-pill ticker-pill--outline" key={`right-${venture.id}-${index}`} style={{ "--ticker-accent": venture.accent } as React.CSSProperties}>
+                  <i /> {venture.descriptor}
+                </span>
+              ))}
+            </div>
           </div>
         </section>
 

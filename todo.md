@@ -24,3 +24,17 @@
 - [ ] Commit and push the latest motion refinement to GitHub.
 - [ ] Deploy the GitHub repository to the authorized Vercel account, if connected.
 - [ ] Confirm the Vercel production URL or request the required account authorization.
+
+## GitHub visibility checklist
+
+- [ ] Confirm the current repository visibility.
+- [ ] Change the `ziu-corporation` GitHub repository to public.
+- [ ] Verify that the public repository URL is accessible.
+
+## Public Vercel and documentation checklist
+
+- [ ] Confirm the current Vercel deployment protection setting.
+- [ ] Disable Vercel SSO protection to make the deployment public.
+- [ ] Add a detailed README with user guide and technical stack documentation.
+- [ ] Push the documentation update to the public GitHub repository.
+- [ ] Verify the Vercel URL is publicly reachable.

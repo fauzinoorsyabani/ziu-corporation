@@ -6,7 +6,7 @@ The live Vercel project is available at [ziu-corporation.vercel.app](https://ziu
 
 ## 1. What this project contains
 
-This is a client-first corporate portfolio site. It introduces Ziu Corporation as the parent brand, shows the venture portfolio, provides a focused detail panel for each venture, presents a visual archive, and ends with a partnership-oriented call to action. It does not currently include a CMS, user authentication, payment flow, database, or form-submission backend.
+This is a client-first corporate portfolio site. It introduces Ziu Corporation as the parent brand, shows the seven-venture portfolio, provides a focused detail panel for each venture, presents a visual archive, and ends with a partnership-oriented call to action. It does not currently include a CMS, user authentication, payment flow, database, or form-submission backend.
 
 | Area | Current behavior | Main source location |
 |---|---|---|
@@ -165,4 +165,3 @@ The portfolio rail may pause when a venture is hovered or focused, allowing the 
 [7]: https://lucide.dev/guide/packages/lucide-react "Lucide React guide"
 [8]: https://sonner.emilkowal.ski/ "Sonner documentation"
 [9]: https://vercel.com/docs "Vercel documentation"
-

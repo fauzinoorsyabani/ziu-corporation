@@ -38,3 +38,10 @@
 - [ ] Add a detailed README with user guide and technical stack documentation.
 - [ ] Push the documentation update to the public GitHub repository.
 - [ ] Verify the Vercel URL is publicly reachable.
+
+## RuangSi portfolio checklist
+
+- [ ] Review the supplied RuangSi website and select a suitable archive visual.
+- [ ] Capture and upload a web image that can be served on both Manus and Vercel.
+- [ ] Add RuangSi as a new venture in the portfolio data and motion rails.
+- [ ] Validate the updated portfolio on desktop and mobile before publishing.

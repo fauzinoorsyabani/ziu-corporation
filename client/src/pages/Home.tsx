@@ -24,6 +24,7 @@ type Venture = {
   accent: string;
   image: string;
   imagePosition?: string;
+  websiteUrl?: string;
   summary: string;
   note: string;
 };
@@ -94,6 +95,19 @@ const ventures: Venture[] = [
     image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663567085695/FzzkvuriyMFPOYxv.png",
     summary: "An education-support brand with a bright, approachable information-first identity.",
     note: "The available reference presents study-help and task-assistance content.",
+  },
+  {
+    id: "ruangsi",
+    name: "RuangSi",
+    descriptor: "Education / SI & IT guidance",
+    category: "Digital",
+    number: "07",
+    accent: "#2ED8D0",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663567085695/TWJEbGOsfEJBmQPV.webp",
+    imagePosition: "center top",
+    websiteUrl: "https://ruangsi.vercel.app/#faq",
+    summary: "A guided education service that helps SI and IT students clarify topics, research decisions, systems, and presentation flow.",
+    note: "Archive visual captured from the supplied RuangSi website.",
   },
 ];
 
@@ -255,7 +269,7 @@ export default function Home() {
             <span className="orbit-node orbit-node--violet" />
             <span className="orbit-node orbit-node--cream" />
             <span className="orbit-node orbit-node--amber" />
-            <div className="orbit-stage__caption orbit-stage__caption--top">PORTFOLIO / 06</div>
+            <div className="orbit-stage__caption orbit-stage__caption--top">PORTFOLIO / 07</div>
             <div className="orbit-stage__caption orbit-stage__caption--bottom">ORBITAL MAP</div>
           </motion.div>
 
@@ -267,7 +281,7 @@ export default function Home() {
         </section>
 
         <section className="signal-ticker" aria-label="Selected Ziu portfolio ventures in motion">
-          <span className="ticker-accessible">Selected portfolio ventures: Xyla Gudang, Mutther Cake and Bakery, Ziu Gaming Store, Code of Auction, Mega Phone Cell, and Joki Tugas.</span>
+          <span className="ticker-accessible">Selected portfolio ventures: Xyla Gudang, Mutther Cake and Bakery, Ziu Gaming Store, Code of Auction, Mega Phone Cell, Joki Tugas, and RuangSi.</span>
           <div className="signal-ticker__caption"><span className="signal-dot" /> LIVE PORTFOLIO SIGNAL</div>
           <div className="signal-ticker__viewport" aria-hidden="true">
             <div className="ticker-track ticker-track--left">
@@ -303,7 +317,7 @@ export default function Home() {
           <div className="section-heading">
             <div>
               <p className="eyebrow"><span className="signal-dot" /> 03 / THE ZIU CONSTELLATION</p>
-              <h2 id="portfolio-title">Six brands. <em>Six signals.</em></h2>
+              <h2 id="portfolio-title">Seven brands. <em>Seven signals.</em></h2>
             </div>
             <p className="section-heading__copy">
               Each venture keeps a recognisable character. Together, they make a more adaptive portfolio.
@@ -383,6 +397,11 @@ export default function Home() {
             <button className="text-button" onClick={showContactToast}>
               Enquire about this venture <ArrowUpRight size={16} />
             </button>
+            {selectedVenture.websiteUrl && (
+              <a className="text-button" href={selectedVenture.websiteUrl} target="_blank" rel="noreferrer">
+                Visit {selectedVenture.name} <ArrowUpRight size={16} />
+              </a>
+            )}
           </motion.div>
         </section>
 
